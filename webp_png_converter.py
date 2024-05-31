@@ -9,6 +9,6 @@ def convert_webp(webp_file):
     png_image.save(image_name + ".png")
     return image_name + ".png"
 
-file_path = ".//sample_images//paris_nft.webp"
-png_url = convert_webp(file_path)
-print(f"PNG Image: {png_url}")
+#file_path = ".//sample_images//paris_nft.webp"
+#png_url = convert_webp(file_path)
+#print(f"PNG Image: {png_url}")
