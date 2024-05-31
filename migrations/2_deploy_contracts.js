@@ -1,5 +1,5 @@
-const NFTGen = artifacts.require("NFTGen");
+const MyNFT = artifacts.require("MyNFT");
 
 module.exports = function (deployer) {
-    deployer.deploy(NFTGen);
+    deployer.deploy(MyNFT);
 };

@@ -22,7 +22,8 @@ def upload_to_pinata(file_path):
     
     if response.status_code == 200:
         ipfs_hash = response.json()["IpfsHash"]
-        return f"https://lime-neighbouring-mole-554.mypinata.cloud/ipfs/{ipfs_hash}"
+        #return f"https://lime-neighbouring-mole-554.mypinata.cloud/ipfs/{ipfs_hash}"
+        return f"ipfs://{ipfs_hash}/"
     else:
         raise Exception(f"Error: {response.status_code}, {response.json()}")
 

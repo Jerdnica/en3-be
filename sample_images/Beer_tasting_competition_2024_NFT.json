@@ -1,0 +1,11 @@
+{
+    "name": "Beer tasting competition 2024",
+    "description": "The Brewers Association developed the World Beer Cup Competition in 1996 to celebrate the art and science of brewing. Often referred to as The Olympics of Beer Competitions, the World Beer Cup is the most prestigious beer competition in the world.",
+    "image": "ipfs://QmQRsohXQJAFecgaDCnMY9j9ZNCqBKrfxkE4ntCMALmp2C/",
+    "attributes": [
+        {
+            "trait_type": "location",
+            "value": "New York, New York"
+        }
+    ]
+}
