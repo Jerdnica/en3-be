@@ -1,7 +1,18 @@
 import requests
+from dotenv import load_dotenv
+import os
 
-def upload_to_pinata(file_path, api_key, api_secret):
+# Load environment variables from .env file
+load_dotenv()
+
+def upload_to_pinata(file_path):
     url = "https://api.pinata.cloud/pinning/pinFileToIPFS"
+    api_key = os.getenv("PINATA_API_KEY")
+    api_secret = os.getenv("PINATA_API_SECRET")
+
+    if not api_key or not api_secret:
+        raise ValueError("API Key and Secret must be set in .env file")
+
     headers = {
         "pinata_api_key": api_key,
         "pinata_secret_api_key": api_secret,
@@ -16,9 +27,6 @@ def upload_to_pinata(file_path, api_key, api_secret):
         raise Exception(f"Error: {response.status_code}, {response.json()}")
 
 # Usage
-api_key = "asd"
-api_secret = "asd"
-file_path = ".//sample_images//ayy_lmao.jpg"
-
-ipfs_url = upload_to_pinata(file_path, api_key, api_secret)
+file_path = ".//sample_images//ayy_lmao2.jpg"
+ipfs_url = upload_to_pinata(file_path)
 print(f"IPFS URL: {ipfs_url}")
