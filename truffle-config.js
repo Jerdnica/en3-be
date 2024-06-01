@@ -4,17 +4,20 @@ const mnemonic = fs.readFileSync(".secret").toString().trim();
 
 module.exports = {
   networks: {
-    bsc: {
-      provider: () => new HDWalletProvider(mnemonic, `https://bsc-dataseed.binance.org/`),
-      network_id: 56,       // BSC Mainnet ID
-      confirmations: 10,    // # of confs to wait between deployments. (default: 0)
-      timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
-      skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
-    },
+    bscTestnet: {
+      provider: () => new HDWalletProvider(mnemonic, `https://data-seed-prebsc-1-s1.binance.org:8545`),
+      network_id: 97,
+      gas: 8000000, // Increase gas limit
+      gasPrice: 10e9, // 10 Gwei
+      confirmations: 5,
+      timeoutBlocks: 50, // Increase timeout blocks
+      networkCheckTimeout: 1000000, // Increase network check timeout
+      skipDryRun: true
+    }
   },
   compilers: {
     solc: {
-      version: "0.8.20",
-    },
-  },
+      version: "0.8.20"
+    }
+  }
 };
