@@ -18,9 +18,9 @@ client = OpenAI(api_key=chatgpt_API)
 
 # Define inputs
 hex_color = "#f4c154"
-location = "Novi Sad, Serbia"
-event_name = "Football Show 2014"
-event_desc = "Play football, win prizes, be good"
+location = "Memeland, Memes"
+event_name = "Ayy lmao Alien"
+event_desc = "Ayy lmao? Ayy lmao. easysysy, lmao, ayy"
 
 # Use AI to generate image url
 image_url = generate_image(hex_color, location, event_name, event_desc)
