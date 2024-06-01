@@ -1,0 +1,4 @@
+AI Generate Image:
+
+               #HEX COLOR   #LOCATION  #TITLE     #DESCRIPTION                       #OUTPUT_FILE
+./0_make_nft.py "#ff5733" "New York" "Art Event" "An amazing art event in New York." "output_nft_image.png"
