@@ -1,0 +1,11 @@
+{
+    "name": "Football Show 2014",
+    "description": "Play football, win prizes, be good",
+    "image": "ipfs://QmUvDM74VrhahPR9GrhjBGESmKEPnHDtPNYMHWWiaF4xg1/",
+    "attributes": [
+        {
+            "trait_type": "location",
+            "value": "Novi Sad, Serbia"
+        }
+    ]
+}

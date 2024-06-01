@@ -18,9 +18,9 @@ client = OpenAI(api_key=chatgpt_API)
 
 # Define inputs
 hex_color = "#f4c154"
-location = "Global, Worldwide"
-event_name = "The Great Meme Contest: Laugh till you drop. 2024"
-event_desc = "We cordially invite you to “The Great Meme Contest: Laugh till you drop”. This is your chance to present your most creative and funniest memes and win great prizes. Whether you’re already a meme pro or just starting out, everyone is welcome to take part!"
+location = "Novi Sad, Serbia"
+event_name = "Football Show 2014"
+event_desc = "Play football, win prizes, be good"
 
 # Use AI to generate image url
 image_url = generate_image(hex_color, location, event_name, event_desc)

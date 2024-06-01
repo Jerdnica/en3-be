@@ -1,0 +1,11 @@
+{
+    "name": "Beerpong festival 2100",
+    "description": "Show your throwing and drinking skill with beer pong game and have some fun with us! Warrior Round winners will get special prize.",
+    "image": "ipfs://QmRtb2RQ6nR5k9p1fdVRTWdaipXMrZAQeCwren3edHVNbz/",
+    "attributes": [
+        {
+            "trait_type": "location",
+            "value": "Novi Sad, Serbia"
+        }
+    ]
+}

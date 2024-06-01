@@ -8,6 +8,8 @@ contract MyNFT is ERC721URIStorage, Ownable {
     uint256 public tokenCounter;
 
     struct NFTCollection {
+        string name;
+        string symbol;
         string baseURI;
         uint256 totalSupply;
         uint256 minted;
@@ -18,18 +20,18 @@ contract MyNFT is ERC721URIStorage, Ownable {
 
     mapping(uint256 => NFTCollection) public nftCollections;
 
-    event NFTCollectionCreated(uint256 indexed tokenId, string baseURI, uint256 totalSupply, uint256 pricePerMint, address donationAddress, uint256 donationPercentage);
+    event NFTCollectionCreated(uint256 indexed tokenId, string name, string symbol, string baseURI, uint256 totalSupply, uint256 pricePerMint, address donationAddress, uint256 donationPercentage);
     event NFTMinted(uint256 indexed tokenId, address indexed minter);
 
-    constructor(string memory name, string memory symbol) ERC721(name, symbol) Ownable(msg.sender) {
+    constructor() ERC721("", "") Ownable(msg.sender) {
         tokenCounter = 0;
     }
 
-    function createNFTCollection(string memory baseURI, uint256 totalSupply, uint256 pricePerMint, address donationAddress, uint256 donationPercentage) public onlyOwner returns (uint256) {
+    function createNFTCollection(string memory name, string memory symbol, string memory baseURI, uint256 totalSupply, uint256 pricePerMint, address donationAddress, uint256 donationPercentage) public onlyOwner returns (uint256) {
         require(donationPercentage <= 100, "Donation percentage cannot exceed 100");
         uint256 newTokenId = tokenCounter;
-        nftCollections[newTokenId] = NFTCollection(baseURI, totalSupply, 0, pricePerMint, donationAddress, donationPercentage);
-        emit NFTCollectionCreated(newTokenId, baseURI, totalSupply, pricePerMint, donationAddress, donationPercentage);
+        nftCollections[newTokenId] = NFTCollection(name, symbol, baseURI, totalSupply, 0, pricePerMint, donationAddress, donationPercentage);
+        emit NFTCollectionCreated(newTokenId, name, symbol, baseURI, totalSupply, pricePerMint, donationAddress, donationPercentage);
         tokenCounter++;
         return newTokenId;
     }
@@ -52,8 +54,25 @@ contract MyNFT is ERC721URIStorage, Ownable {
         emit NFTMinted(newTokenId, msg.sender);
     }
 
-    function getNFTCollectionDetails(uint256 collectionId) public view returns (string memory, uint256, uint256, uint256, address, uint256) {
+    function getNFTCollectionDetails(uint256 collectionId) public view returns (string memory, string memory, string memory, uint256, uint256, uint256, address, uint256) {
         NFTCollection memory nftCollection = nftCollections[collectionId];
-        return (nftCollection.baseURI, nftCollection.totalSupply, nftCollection.minted, nftCollection.pricePerMint, nftCollection.donationAddress, nftCollection.donationPercentage);
+        return (nftCollection.name, nftCollection.symbol, nftCollection.baseURI, nftCollection.totalSupply, nftCollection.minted, nftCollection.pricePerMint, nftCollection.donationAddress, nftCollection.donationPercentage);
+    }
+
+    function name() public view override returns (string memory) {
+        uint256 collectionId = _getCollectionId(msg.sender);
+        return nftCollections[collectionId].name;
+    }
+
+    function symbol() public view override returns (string memory) {
+        uint256 collectionId = _getCollectionId(msg.sender);
+        return nftCollections[collectionId].symbol;
+    }
+
+    function _getCollectionId(address owner) internal view returns (uint256) {
+        // Implement your logic to get the collection ID based on the owner or any other logic
+        // For simplicity, we assume one owner has one collection
+        // This part needs to be customized as per your use case
+        return 0;
     }
 }
