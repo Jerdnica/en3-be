@@ -2,3 +2,7 @@ AI Generate Image:
 
                #HEX COLOR   #LOCATION  #TITLE     #DESCRIPTION                       #OUTPUT_FILE
 ./0_make_nft.py "#ff5733" "New York" "Art Event" "An amazing art event in New York." "output_nft_image.png"
+
+Upload image to IPFS:
+                #LOCATION            #TITLE                     #DESCRIPTION                       #IMAGE PATH
+./upload_nft.py "Global, Worldwide" "The Great Meme Contest: " "We cordially invite you to part!" "image_path_yes.png"
