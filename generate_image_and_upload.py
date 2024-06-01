@@ -18,9 +18,9 @@ client = OpenAI(api_key=chatgpt_API)
 
 # Define inputs
 hex_color = "#f4c154"
-location = "New York, New York"
-event_name = "Beer tasting competition 2024"
-event_desc = "The Brewers Association developed the World Beer Cup Competition in 1996 to celebrate the art and science of brewing. Often referred to as The Olympics of Beer Competitions, the World Beer Cup is the most prestigious beer competition in the world."
+location = "Global, Worldwide"
+event_name = "The Great Meme Contest: Laugh till you drop. 2024"
+event_desc = "We cordially invite you to “The Great Meme Contest: Laugh till you drop”. This is your chance to present your most creative and funniest memes and win great prizes. Whether you’re already a meme pro or just starting out, everyone is welcome to take part!"
 
 # Use AI to generate image url
 image_url = generate_image(hex_color, location, event_name, event_desc)
