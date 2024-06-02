@@ -24,17 +24,17 @@ def main(location, event_name, event_desc, nft_image_path):
 
     # Upload NFT to IPFS
     ipfs_url = upload_to_pinata(nft_image_path)
-    print(f"IPFS Image URL: {ipfs_url}")
+    #print(f"IPFS Image URL: {ipfs_url}")
 
     # Generate NFT Metadata
     nft_metadata_path = generate_nft_metadata(event_name, event_desc, location, nft_image_path, ipfs_url)
-    print(f"Metadata File: {nft_metadata_path}")
+    #print(f"Metadata File: {nft_metadata_path}")
 
     # Upload NFT Metadata to IPFS
     ipfs_metadata_url = upload_to_pinata(nft_metadata_path)
-    print(f"IPFS Metadata URL: {ipfs_metadata_url}")
+    #print(f"IPFS Metadata URL: {ipfs_metadata_url}")
 
-    print("ALL DONE!")
+    #print("ALL DONE!")
     return ipfs_metadata_url
 
 if __name__ == '__main__':
@@ -48,4 +48,4 @@ if __name__ == '__main__':
     nft_image_path = sys.argv[4]
 
     ipfs_metadata_url = main(location, event_name, event_desc, nft_image_path)
-    print(ipfs_metadata_url)
+    print(ipfs_metadata_url, end="")
