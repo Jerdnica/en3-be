@@ -1,0 +1,11 @@
+{
+    "name": "Ayy lmao contest",
+    "description": "Who can say ayy lmao the most times!",
+    "image": "ipfs://QmXnxgkzHiXqzwFUAg9YCnNsTkGrNynJeZbNEjsSCni2Wq/",
+    "attributes": [
+        {
+            "trait_type": "location",
+            "value": "Belgrade, Serbia"
+        }
+    ]
+}

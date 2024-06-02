@@ -1,0 +1,11 @@
+{
+    "name": "Picking flowers competition",
+    "description": "Ayyyy lmao. You need to pick as many flowers as you can in 20 minutes",
+    "image": "ipfs://QmZ9YLeLduUNmLWomEJz9vQNtaf9zDHc3sdvBRzrCdT3qa/",
+    "attributes": [
+        {
+            "trait_type": "location",
+            "value": "Belgrade, Central Serbia, SRB"
+        }
+    ]
+}

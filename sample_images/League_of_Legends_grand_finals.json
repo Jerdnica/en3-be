@@ -1,0 +1,11 @@
+{
+    "name": "League of Legends grand finals",
+    "description": "Loool",
+    "image": "ipfs://QmUPSjXtRhKw1qscGkoLf7h5ZhH2FCRCDieF4S3nU3ZEWX/",
+    "attributes": [
+        {
+            "trait_type": "location",
+            "value": "Belgrade, Central Serbia, SRB"
+        }
+    ]
+}
